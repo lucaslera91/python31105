@@ -4,7 +4,7 @@ import datetime
 
 # Create your views here.
 from django.http import HttpResponse
-from django.template import Context, Template
+from django.template import Context, Template, loader
 from AppCoder.models import Familiares
 
 
@@ -13,8 +13,8 @@ def familiares(self):
 
     miHtml = open('/Users/lucaslera/Documents/python-coder/djangoProjecto1/Projecto1/ProyectoCoder/AppCoder/plantillas/template1.html')
 
-    plantilla = Template(miHtml.read())
-
+    # plantilla = Template(miHtml.read())
+    plantilla = loader.get_template('template1.html')
     miHtml.close()
 
 
